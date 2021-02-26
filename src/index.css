@@ -52,3 +52,18 @@
 .forgot-password:hover {
     text-decoration: underline;
 }
+
+.align-center {
+    text-align: center;
+}
+
+.loader {
+    padding: 5vh
+}
+
+.error {
+    margin-left: 5%;
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}

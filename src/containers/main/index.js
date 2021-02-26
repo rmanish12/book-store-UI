@@ -1,33 +1,58 @@
-import React, { useState } from 'react'
-import Main from '../../components/main/Main'
+import React, { useState } from "react";
+import { connect } from "react-redux";
 
-const main = () => {
+import Main from "../../components/main/Main";
 
-    const [state, setState] = useState({
-        email: '',
-        password: ''
-    })
+import { onLogin } from "../../store/actions/auth";
 
-    const onChangeHandler = e => {
-        const name = e.target.name
-        const value = e.target.value
+const main = (props) => {
+  const { onLogin, auth } = props;
+  const { isLoading, errorMessage } = auth;
 
-        setState({
-            ...state,
-            [name]: value
-        })
-    }
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
 
-    const onLoginHandler = e => {
-        e.preventDefault()
-        console.log(state)
-    }
+  const onChangeHandler = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
 
-    return (
-        <>
-            <Main state={state} onChangeHandler={onChangeHandler} onLoginHandler={onLoginHandler}/>
-        </>
-    )
-}
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
 
-export default main
+  const onLoginHandler = (e) => {
+    e.preventDefault();
+
+    onLogin(state);
+  };
+
+  return (
+    <>
+      <Main
+        state={state}
+        onChangeHandler={onChangeHandler}
+        onLoginHandler={onLoginHandler}
+        isLoading={isLoading}
+        errorMessage={errorMessage}
+      />
+    </>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    auth: state.auth,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLogin: (credentials) => dispatch(onLogin(credentials)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(main);

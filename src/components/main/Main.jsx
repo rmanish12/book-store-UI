@@ -1,10 +1,11 @@
 import React from "react";
 import { Grid, Paper, TextField, Button } from "@material-ui/core";
+import Loader from '../loader/Loader'
 import "../../index.css";
 
 const main = (props) => {
 
-    const { state, onChangeHandler, onLoginHandler } = props
+    const { state, onChangeHandler, onLoginHandler, isLoading, errorMessage } = props
     const { email, password } = state
 
   return (
@@ -43,9 +44,13 @@ const main = (props) => {
                 <Button className="login-button" type="submit">LOGIN</Button>
               </form>
 
+              <div className="error">{errorMessage}</div>
+
               <div className="forgot-password-div">
                 <span className="forgot-password">Forgot Password?</span>
               </div>
+
+              <Loader show={isLoading}/>
             </Paper>
           </div>
         </Grid>
