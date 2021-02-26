@@ -1,3 +1,54 @@
-.greeting {
-    background-color: wheat;
+.main {
+    background-image: url('./assets/book-store.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login-card {
+    margin-top: 30vh;
+}
+
+.brand-name-div {
+    text-align: center;
+    padding-top: 2%;
+}
+
+.brand-name {
+    text-transform: uppercase;
+    font-size: xx-large;
+    color: #33ccff !important;
+}
+
+.login-field {
+    width: 90%;
+    margin-left: 5% !important;
+    margin-top: 2% !important;
+}
+
+.login-button {
+    background-color: #33ccff !important;
+    width: 90%;
+    margin-left: 5% !important;
+    margin-bottom: 2% !important;
+    margin-top: 2% !important;
+    min-height: 50px;
+}
+
+.forgot-password-div {
+    text-align: center;
+    padding-bottom: 2% !important;
+}
+
+.forgot-password {
+    font-style: italic;
+    font-size: smaller;
+    cursor: pointer;
+    color: #33ccff !important;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
 }
