@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 import Main from "../../components/main/Main";
 
@@ -7,12 +8,16 @@ import { onLogin } from "../../store/actions/auth";
 
 const main = (props) => {
   const { onLogin, auth } = props;
-  const { isLoading, errorMessage } = auth;
+  const { isLoading, errorMessage, isAuthenticated } = auth;
 
   const [state, setState] = useState({
     email: "",
     password: "",
   });
+
+  useEffect(() => {
+    isAuthenticated ? <Redirect to="/home"/> : null
+  }, [isAuthenticated])
 
   const onChangeHandler = (e) => {
     const name = e.target.name;
