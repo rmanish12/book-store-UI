@@ -25,7 +25,7 @@ const main = (props) => {
                   name="email"
                   label="Email"
                   variant="outlined"
-                  className="login-field"
+                  className="form-field"
                   value={email}
                   onChange={onChangeHandler}
                 />
@@ -36,7 +36,7 @@ const main = (props) => {
                   name="password"
                   label="Password"
                   variant="outlined"
-                  className="login-field"
+                  className="form-field"
                   value={password}
                   onChange={onChangeHandler}
                 />

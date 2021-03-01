@@ -7,6 +7,8 @@ import {
   LOGOUT,
 } from "../actionTypes";
 
+import getHeader from '../../../util/getHeader'
+
 const setToken = (token) => {
   document.cookie = `authToken=${token}`;
 };
@@ -14,17 +16,6 @@ const setToken = (token) => {
 const removeToken = () => {
   document.cookie = "authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 };
-
-const getHeader = () => {
-  const token = document.cookie.split("=")[1];
-  const header = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  return header
-}
 
 export const onLogin = ({ email, password }) => (dispatch) => {
   dispatch({

@@ -4,7 +4,7 @@ const common = require('./webpack.common')
 module.exports = merge(common, {
     mode: 'development',
     devServer: {
-        contentBase: './build',
+        contentBase: '/',
         historyApiFallback: true,
         port: 3000
     },

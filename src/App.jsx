@@ -1,22 +1,21 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import Main from "./containers/main";
-import Home from "./containers/home"
+import Home from "./containers/home";
 
-import { verifyUser } from './store/actions/auth'
+import { verifyUser } from "./store/actions/auth";
 
 import "./index.css";
 
 const App = (props) => {
-
-  const { verifyUser } = props
+  const { verifyUser } = props;
   const { isAuthenticated } = props.auth;
 
   useEffect(() => {
-    verifyUser()
-  }, [])
+    verifyUser();
+  }, []);
 
   return (
     <>
@@ -24,15 +23,16 @@ const App = (props) => {
         <Route
           path="/"
           exact
-          render={() => isAuthenticated ? <Redirect to="/home" /> : <Main />}
+          render={() => (isAuthenticated ? <Redirect to="/home" /> : <Main />)}
         />
 
         <Route
           path="/home"
-          exact
-          render={() => isAuthenticated ? <Home /> : <Redirect to="/" />}
+          render={() => (isAuthenticated ? <Home /> : <Redirect to="/" />)}
         />
+
       </Switch>
+      {/* <Home /> */}
     </>
   );
 };
@@ -43,10 +43,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    verifyUser: () => dispatch(verifyUser())
-  }
-}
+    verifyUser: () => dispatch(verifyUser()),
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

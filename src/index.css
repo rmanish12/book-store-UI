@@ -22,7 +22,7 @@
     color: #33ccff !important;
 }
 
-.login-field {
+.form-field {
     width: 90%;
     margin-left: 5% !important;
     margin-top: 2% !important;
@@ -66,4 +66,64 @@
     color: red;
     font-size: 12px;
     font-style: italic;
+}
+
+.wd-90 {
+    width: 90%;
+}
+
+.city-box {
+    margin-left: 10% !important;
+}
+
+.pincode-box {
+    width: 90% !important;
+}
+
+.add-store-label {
+    text-align: center;
+    padding-top: 2% !important;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+
+.buttons-container {
+    text-align: right;
+    padding-bottom: 2% !important;
+}
+
+.inner-form-button {
+    margin-right: 5% !important;
+    width: 15vw !important;
+}
+
+.success-modal {
+    background-color: #4BB543;
+    font-style: italic;
+}
+
+.warning-modal {
+    background-color: #FFCC00;
+    font-style: italic;
+}
+
+.error-modal {
+    background-color: #FF0000;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 600px) {
+    .city-box {
+        margin-left: 0% !important;
+    }
+
+    .pincode-box {
+        width: 100% !important;
+    }
+
+    .inner-form-button {
+        width: 90% !important;
+        margin-right: 5% !important;
+        margin-top: 2% !important;
+    }
 }
