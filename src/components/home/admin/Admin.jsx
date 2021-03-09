@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import AddStore from "../../../containers/home/admin/addStore"
+import ViewStore from "../../../containers/home/admin/viewStore"
 
 export default function AdminPortal() {
   const classes = useStyles();
@@ -23,6 +24,19 @@ export default function AdminPortal() {
         </AccordionSummary>
         <AccordionDetails>
             <AddStore />
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="add-store"
+        >
+          <Typography className={classes.heading}>Get Store Details</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+            <ViewStore />
         </AccordionDetails>
       </Accordion>
     </div>

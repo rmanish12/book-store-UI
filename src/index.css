@@ -112,6 +112,35 @@
     font-style: italic;
 }
 
+.min-wd-100 {
+    min-width: 100%;
+}
+
+.pagination-block {
+    text-align: right;
+    margin: 2vh 7vw;
+    padding-bottom: 1%;
+}
+
+.pagination-label {
+    margin-right: 30px;
+    font-size: smaller;
+}
+
+.pagination-dropdown {
+    margin-right: 40px;
+}
+
+.pagination-previous {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.pagination-next {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
     .city-box {
         margin-left: 0% !important;
